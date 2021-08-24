@@ -3,6 +3,7 @@
 		<title>
 			Pencarinama
 		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel='stylesheet' href='./assets/css/index.css'>
 		<link rel='stylesheet' href='./assets/css/slowtype.css'>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +26,22 @@
 					Contact Me
 				</a>
 			</div>
+			<div class="header-sidebar">
+				<button class="js__header-button header-sidebar-button"></button>
+				<div class="header-sidebar-content">
+					<div class="header-sidebar-overlay">
+						<a href="#top" class="tab-item">
+							About Me
+						</a>
+						<a href="#works" class='tab-item'>
+							Portfolio
+						</a>
+						<a href="#contact" class='tab-item'>
+							Contact Me
+						</a>
+					</div>
+				</div>
+			</div>
 		</header>
 		<div class="core-content" id="top">
 			<div class="hero">
@@ -32,7 +49,7 @@
 				<div class="js__slowtype"></div>
 			</div>			
 		</div>
-		<div class="core-content" id="portfolio">
+		<div class="core-content" id="works">
 			Hello World!
 		</div>
 		<div class="core-content" id="contact">
@@ -45,24 +62,19 @@
 		</footer>
 	</body>
 	<script type='text/javascript' src='./assets/js/slowtype.js'></script>
-	<script type="text/javascript">
-		let js__header = document.querySelector('.header-content');
-		document.addEventListener('scroll', () => {
-			debounce(followScroll, 100);
-		})
-		debounce = (method, delay) => {
-		    clearTimeout(method.timeout);
-		    method.timeout= setTimeout(function(){
-		        method();
-		    }, delay);
-		}
-		followScroll = () => {
-			if(window.scrollY > 10 && !(js__header.classList.contains('scrolled'))) {
-				js__header.classList.add('scrolled');
+	<script type="text/javascript" src='./assets/js/scroll.js'></script>
+	<script type='text/javascript'>
+		let c__button = document.querySelector('.js__header-button');
+		let c__sidecontent = document.querySelector('.header-sidebar-content');
+		c__button.addEventListener('click', () => {
+			if(c__sidecontent.classList.contains('js__active')) {
+				c__sidecontent.classList.remove('js__active')
+				c__button.classList.remove('js__active')
 			}
 			else {
-				js__header.classList.remove('scrolled');
+				c__sidecontent.classList.add('js__active')
+				c__button.classList.add('js__active')
 			}
-		}
+		}, false )
 	</script>
 </html>
