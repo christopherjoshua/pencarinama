@@ -1,0 +1,21 @@
+.js__slowtype 
+{
+	position: relative;
+}
+.js__slowtype:after 
+{
+	height: 1em;
+	content: "|";
+	animation-name: flash;
+	animation-iteration-count: infinite;
+	animation-duration: .4s;
+}
+@keyframes flash 
+{
+	0%, 25%, 75%, 100% {
+		opacity: 0;
+	}
+	25.1%, 74.9% {
+		opacity: 1;
+	}
+}

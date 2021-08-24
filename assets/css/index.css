@@ -14,13 +14,21 @@ body
 }
 header
 {
-	position: sticky;
+	position: fixed;
 	top: 0;
-	min-height: 8rem;
+	left: 0;
+	right: 0;
+	height: 8rem;
+	max-height: 8rem;
 	padding: 2rem 2rem;
-	background: linear-gradient(0deg, #ffffff 50%, #001261 50%, #001261 100%);
+	background: linear-gradient(180deg, #001261 50%, #ffffff 50%);
+    background-size: 150% 8rem;
 	display: flex;
 	box-sizing: border-box;
+	transition: max-height .3s ease-out;
+}
+header.scrolled {
+	max-height: 4rem;
 }
 footer 
 {
@@ -82,4 +90,22 @@ footer
 .tab-item:nth-last-child(1)
 {
 	margin-right: 0;
+}
+
+#top
+{
+	min-height: 100vh;
+	background: #00126122;
+}
+.hero
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:  translate(-50%, -50%);
+	font-family: "Poppins", Arial, Calibri;
+	text-align: left;
+	width: 60vw;
+	font-size: 4rem;
+	color: #ffffff;
 }
