@@ -1,5 +1,6 @@
 //get component
 let c__slowtype = document.querySelector('.js__slowtype');
+let c__sidekick = document.querySelector('.js__sidekick');
 //set minimum time to start typing
 let delay = 2000;
 let content_type = 'Frontend Developer'
@@ -14,6 +15,9 @@ let slowType = () => {
 				delay = 200;
 				index += 1;
 				slowType();	
+			}
+			else {
+				c__sidekick.classList.add('js__active')
 			}
 		}
 		, delay)	

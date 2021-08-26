@@ -15,44 +15,69 @@
 			<div class="header-title">
 				Pencarinama
 			</div>
-			<div class="header-tab">
-				<a href="#top" class="tab-item">
+			<nav class="header-tab">
+				<a href="#top" class="js__tab-item tab-item" attr-anchor-name='top'>
 					About Me
 				</a>
-				<a href="#works" class='tab-item'>
+				<a href="#works" class='js__tab-item tab-item' attr-anchor-name='works'>
 					Portfolio
 				</a>
-				<a href="#contact" class='tab-item'>
+				<a href="#contact" class='js__tab-item tab-item' attr-anchor-name='contact'>
 					Contact Me
 				</a>
-			</div>
-			<div class="header-sidebar">
-				<button class="js__header-button header-sidebar-button"></button>
-				<div class="header-sidebar-content">
+			</nav>
+			<nav class="header-sidebar">
+				<button class="js__header-button header-sidebar-button" label='Show Navigation'></button>
+				<div class="header-sidebar-content" tabindex="-1">
 					<div class="header-sidebar-overlay">
-						<a href="#top" class="tab-item">
+						<a href="#top" tabindex="-1" class="js__sidebar-item sidebar-item">
 							About Me
 						</a>
-						<a href="#works" class='tab-item'>
+						<a href="#works" tabindex='-1' class='js__sidebar-item sidebar-item'>
 							Portfolio
 						</a>
-						<a href="#contact" class='tab-item'>
+						<a href="#contact" tabindex="-1" class='js__sidebar-item sidebar-item'>
 							Contact Me
 						</a>
 					</div>
 				</div>
-			</div>
+			</nav>
 		</header>
-		<div class="core-content" id="top">
+		<div class="core-content" id='core-content-top'>
+			<input type="button" id='top' attr-anchor='top' tabindex="-1"></input>
 			<div class="hero">
 				I am a
 				<div class="js__slowtype"></div>
+				<div class="js__sidekick sidekick">
+					I've been developing websites for <span class='js__automate-year'></span> years.<br/>
+					Here's just a few of the things I've worked on!<br/>
+					<a href='#works' class="js__hero-link hero-link">See my portfolio</a>
+				</div>
 			</div>			
 		</div>
-		<div class="core-content" id="works">
-			Hello World!
+		<div class="core-content" id='core-content-works'>
+			<input type='button' id='works' attr-anchor='works' tabindex="-1"></input>
+			<div class="slider" tabindex="0">
+				<div class="slider-container">
+					<div class="slider-item">
+						<img src='/' alt='example image' class="slider-item-image" tabindex="0"/>
+						<p class="slider-item-description" tabindex="0">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tortor eu velit suscipit porta vel semper orci. Nulla facilisi. Ut tempor diam iaculis diam sollicitudin dapibus. Morbi vestibulum tincidunt nisl id pulvinar. Phasellus a velit malesuada, tempor urna non, consectetur turpis. Proin sodales finibus commodo. Aliquam magna ex, pulvinar ut elementum et, blandit ut sapien. Pellentesque et bibendum nibh, ut consectetur elit. Phasellus risus nunc, dictum sit amet mi at, placerat ultrices orci. Sed diam nisl, pulvinar ac luctus eget, hendrerit at lectus. Phasellus ullamcorper metus ex, ac aliquet lorem hendrerit sit amet.
+						</p>
+					</div>
+				</div>
+				<div class="slider-navigation">
+					<button class="slider-navigation-prev">
+						Previous
+					</button>
+					<button class="slider-navigation-next">
+						Next
+					</button>
+				</div>
+			</div>
 		</div>
 		<div class="core-content" id="contact">
+			<input type='button' id='contact' attr-anchor='contact' tabindex="-1"></input>
 			Hello World!
 		</div>
 		<footer>
@@ -64,17 +89,55 @@
 	<script type='text/javascript' src='./assets/js/slowtype.js'></script>
 	<script type="text/javascript" src='./assets/js/scroll.js'></script>
 	<script type='text/javascript'>
+
 		let c__button = document.querySelector('.js__header-button');
+		let c__herobutton = document.querySelector('.js__hero-link');
 		let c__sidecontent = document.querySelector('.header-sidebar-content');
-		c__button.addEventListener('click', () => {
+		let c__sideitem = document.querySelectorAll('.js__sidebar-item');
+		let c__tabitem = document.querySelectorAll('.js__tab-item');
+		let c__year = document.querySelector('.js__automate-year');
+
+		triggerModal = () => {
 			if(c__sidecontent.classList.contains('js__active')) {
 				c__sidecontent.classList.remove('js__active')
 				c__button.classList.remove('js__active')
+				c__sideitem.forEach( i => {
+					i.setAttribute('tabindex', -1)
+				})
 			}
 			else {
 				c__sidecontent.classList.add('js__active')
 				c__button.classList.add('js__active')
+				c__sideitem.forEach( i => {
+					i.setAttribute('tabindex', 0)
+				})
 			}
-		}, false )
+		}
+		updateFocus = (o) => {
+			let anchor_name = o;
+			console.log(document.querySelector(`[attr-anchor="${anchor_name}"]`))
+			if(document.querySelector(`[attr-anchor="${anchor_name}"]`))
+			{
+				let anchor_obj = document.querySelector(`[attr-anchor="${anchor_name}"]`);
+				anchor_obj.setAttribute('tabindex', '0');
+				anchor_obj.focus();
+				setTimeout( () => {
+					anchor_obj.setAttribute('tabindex', '-1');
+				}, 100)
+			}
+		}
+
+		c__button.addEventListener('click', triggerModal, false );
+		c__sideitem.forEach( i => {
+			i.addEventListener('click', triggerModal, false)
+			i.addEventListener('click', updateFocus(i.getAttribute('attr-anchor-name')), false)
+		})
+		c__tabitem.forEach( i => {
+			i.addEventListener('click', updateFocus(i.getAttribute('attr-anchor-name')), false)
+		})
+		c__herobutton.addEventListener('click', updateFocus('works'), false)	
+
+		c__year.innerHTML = (new Date()).getFullYear() - 2015;
+
 	</script>
 </html>
