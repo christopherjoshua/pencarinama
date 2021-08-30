@@ -3,7 +3,7 @@
 		<title>
 			Pencarinama
 		</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width">
 		<link rel='stylesheet' href='./assets/css/index.css'>
 		<link rel='stylesheet' href='./assets/css/slowtype.css'>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,22 +59,32 @@
 			<input type='button' id='works' attr-anchor='works' tabindex="-1"></input>
 			<div class="slider" tabindex="0">
 				<div class="slider-container">
-					<div class="slider-item">
-						<img src='/' alt='example image' class="slider-item-image" tabindex="0"/>
+					<div class="slider-item js__active" attr-slider-index="0">
+						<img src='./assets/images/jt.png' alt='Image of Jalantikus.com website (2017-2020), showing a variety of tech-related news and popular apps for downloads' class="slider-item-image" tabindex="0"/>
 						<p class="slider-item-description" tabindex="0">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tortor eu velit suscipit porta vel semper orci. Nulla facilisi. Ut tempor diam iaculis diam sollicitudin dapibus. Morbi vestibulum tincidunt nisl id pulvinar. Phasellus a velit malesuada, tempor urna non, consectetur turpis. Proin sodales finibus commodo. Aliquam magna ex, pulvinar ut elementum et, blandit ut sapien. Pellentesque et bibendum nibh, ut consectetur elit. Phasellus risus nunc, dictum sit amet mi at, placerat ultrices orci. Sed diam nisl, pulvinar ac luctus eget, hendrerit at lectus. Phasellus ullamcorper metus ex, ac aliquet lorem hendrerit sit amet.
+							My first major frontend work was the redesign of Jalantikus.com website. This iteration lasted from 2017-2020, and was my introduction to React JS.
+						</p>
+					</div>
+					<div class="slider-item" attr-slider-index="1">
+						<img src='./assets/images/babe.png' alt='Image of BaBe.com website for BaBe app (2019-2020) and Helo-BaBe app as of 2021' class="slider-item-image" tabindex="-1"/>
+						<p class="slider-item-description" tabindex="-1">
+							Another major redesign was for the BaBe.com website, but this time instead of using React, this one is done without any framework, with as much as vanilla JS as possible.
 						</p>
 					</div>
 				</div>
 				<div class="slider-navigation">
-					<button class="slider-navigation-prev">
+					<button class="js__slider-prev slider-navigation-prev">
 						Previous
 					</button>
-					<button class="slider-navigation-next">
+					<button class="js__slider-next slider-navigation-next">
 						Next
 					</button>
 				</div>
 			</div>
+		</div>
+		<div class="slider-image-overlay">
+			<img src='./assets/images/jt.png' alt='Image of Jalantikus.com website (2017-2020), showing variety of tech-related news and popular apps for downloads' class="slider-image-zoom"/>
+			<button class="slider-image-close" label='Close zoom overlay'></button>
 		</div>
 		<div class="core-content" id="contact">
 			<input type='button' id='contact' attr-anchor='contact' tabindex="-1"></input>
@@ -88,56 +98,5 @@
 	</body>
 	<script type='text/javascript' src='./assets/js/slowtype.js'></script>
 	<script type="text/javascript" src='./assets/js/scroll.js'></script>
-	<script type='text/javascript'>
-
-		let c__button = document.querySelector('.js__header-button');
-		let c__herobutton = document.querySelector('.js__hero-link');
-		let c__sidecontent = document.querySelector('.header-sidebar-content');
-		let c__sideitem = document.querySelectorAll('.js__sidebar-item');
-		let c__tabitem = document.querySelectorAll('.js__tab-item');
-		let c__year = document.querySelector('.js__automate-year');
-
-		triggerModal = () => {
-			if(c__sidecontent.classList.contains('js__active')) {
-				c__sidecontent.classList.remove('js__active')
-				c__button.classList.remove('js__active')
-				c__sideitem.forEach( i => {
-					i.setAttribute('tabindex', -1)
-				})
-			}
-			else {
-				c__sidecontent.classList.add('js__active')
-				c__button.classList.add('js__active')
-				c__sideitem.forEach( i => {
-					i.setAttribute('tabindex', 0)
-				})
-			}
-		}
-		updateFocus = (o) => {
-			let anchor_name = o;
-			console.log(document.querySelector(`[attr-anchor="${anchor_name}"]`))
-			if(document.querySelector(`[attr-anchor="${anchor_name}"]`))
-			{
-				let anchor_obj = document.querySelector(`[attr-anchor="${anchor_name}"]`);
-				anchor_obj.setAttribute('tabindex', '0');
-				anchor_obj.focus();
-				setTimeout( () => {
-					anchor_obj.setAttribute('tabindex', '-1');
-				}, 100)
-			}
-		}
-
-		c__button.addEventListener('click', triggerModal, false );
-		c__sideitem.forEach( i => {
-			i.addEventListener('click', triggerModal, false)
-			i.addEventListener('click', updateFocus(i.getAttribute('attr-anchor-name')), false)
-		})
-		c__tabitem.forEach( i => {
-			i.addEventListener('click', updateFocus(i.getAttribute('attr-anchor-name')), false)
-		})
-		c__herobutton.addEventListener('click', updateFocus('works'), false)	
-
-		c__year.innerHTML = (new Date()).getFullYear() - 2015;
-
-	</script>
+	<script type='text/javascript' src='./assets/js/utils.js'></script>
 </html>
