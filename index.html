@@ -27,7 +27,7 @@
 				</a>
 			</nav>
 			<nav class="header-sidebar">
-				<button class="js__header-button header-sidebar-button" label='Show Navigation'></button>
+				<button class="js__header-button header-sidebar-button" label='Show navigation'></button>
 				<div class="header-sidebar-content" tabindex="-1">
 					<div class="header-sidebar-overlay">
 						<a href="#top" tabindex="-1" class="js__sidebar-item sidebar-item">
@@ -58,37 +58,44 @@
 		<div class="core-content" id='core-content-works'>
 			<input type='button' id='works' attr-anchor='works' tabindex="-1"></input>
 			<div class="slider" tabindex="0">
-				<div class="slider-container">
-					<div class="slider-item js__active" attr-slider-index="0">
-						<img src='./assets/images/jt.png' alt='Image of Jalantikus.com website (2017-2020), showing a variety of tech-related news and popular apps for downloads' class="slider-item-image" tabindex="0"/>
+				<div class="slider-container js__slider-container">
+					<div class="slider-item js__active js__slider-item" role='button' attr-slider-index="0" attr-slider-src='./assets/images/jt.png' attr-slider-alt='Image of Jalantikus.com website (2017-2020), showing a variety of tech-related news and popular apps for downloads.' tabindex="0">
+						<img src='./assets/images/jt.png' alt='Image of Jalantikus.com website (2017-2020), showing a variety of tech-related news and popular apps for downloads. Click to zoom.' class="slider-item-image" tabindex="0"/>
 						<p class="slider-item-description" tabindex="0">
 							My first major frontend work was the redesign of Jalantikus.com website. This iteration lasted from 2017-2020, and was my introduction to React JS.
 						</p>
 					</div>
-					<div class="slider-item" attr-slider-index="1">
-						<img src='./assets/images/babe.png' alt='Image of BaBe.com website for BaBe app (2019-2020) and Helo-BaBe app as of 2021' class="slider-item-image" tabindex="-1"/>
+					<div class="slider-item js__slider-item" attr-slider-index="1" role='button' attr-slider-src='./assets/images/babe.png' attr-slider-alt='Image of BaBe.com website for BaBe app (2019-2020) and Helo-BaBe app as of 2021.' tabindex="-1">
+						<img src='./assets/images/babe.png' alt='Image of BaBe.com website for BaBe app (2019-2020) and Helo-BaBe app as of 2021. CLick to zoom.' class="slider-item-image" tabindex="-1"/>
 						<p class="slider-item-description" tabindex="-1">
 							Another major redesign was for the BaBe.com website, but this time instead of using React, this one is done without any framework, with as much as vanilla JS as possible.
 						</p>
 					</div>
+					<div class="slider-item js__slider-item" attr-slider-index="2" role='button' attr-slider-src='./assets/images/image.png' attr-slider-alt='Image of BaBe image editor for BaBe app (2020-2021).' tabindex="-1">
+						<img src='./assets/images/image.png' alt='Image of BaBe image editor for BaBe app (2020-2021). CLick to zoom.' class="slider-item-image" tabindex="-1"/>
+						<p class="slider-item-description" tabindex="-1">
+							This was a microsite featured in BaBe app that allows user to edit and post images, as well as adding filter and stickers. For events like Ramadan, users can select a custom background and custom stickers. <br/> This microsite is unavailable to Helo-BaBe.
+						</p>
+					</div>
 				</div>
 				<div class="slider-navigation">
-					<button class="js__slider-prev slider-navigation-prev">
-						Previous
-					</button>
-					<button class="js__slider-next slider-navigation-next">
-						Next
-					</button>
+					<button class="js__slider-prev slider-navigation-prev" label='Previous slide'></button>
+					<button class="js__slider-next slider-navigation-next" label='Next slide'></button>
 				</div>
 			</div>
 		</div>
 		<div class="slider-image-overlay">
 			<img src='./assets/images/jt.png' alt='Image of Jalantikus.com website (2017-2020), showing variety of tech-related news and popular apps for downloads' class="slider-image-zoom"/>
-			<button class="slider-image-close" label='Close zoom overlay'></button>
+			<button class="slider-image-close js__slider-zoom-close" label='Close zoom overlay' tabindex="-1"></button>
 		</div>
-		<div class="core-content" id="contact">
+		<div class="core-content" id="core-content-contact">
 			<input type='button' id='contact' attr-anchor='contact' tabindex="-1"></input>
-			Hello World!
+			<div class="contact-title">
+				Contact <em>Me</em>
+			</div>
+			<p>
+				You can reach out to me from my <a href='https://www.linkedin.com/in/christopher-joshua-479594b9/' target="_blank">LinkedIn</a> or send me an email at <a href='mailto:cj.christopherjoshua@gmail.com' target="_blank">cj.christopherjoshua@gmail.com</a>
+			</p>
 		</div>
 		<footer>
 			<div class="copyright">
