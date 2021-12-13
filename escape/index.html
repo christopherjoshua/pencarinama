@@ -9,17 +9,19 @@
     <canvas id="unity-canvas" width=640 height=480 style="width: 640px; height: 480px; background: #231F20"></canvas>
     <script src="Build/Build-02.loader.js"></script>
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Build-02.data.unityweb",
-        frameworkUrl: "Build/Build-02.framework.js.unityweb",
-        codeUrl: "Build/Build-02.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Escape Game - Bedroom",
-        productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+      window.onload = () => {
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/Build-02.data.unityweb",
+          frameworkUrl: "Build/Build-02.framework.js.unityweb",
+          codeUrl: "Build/Build-02.wasm.unityweb",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "Escape Game - Bedroom",
+          productVersion: "0.1",
+          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
+      }
     </script>
   </body>
 </html>
