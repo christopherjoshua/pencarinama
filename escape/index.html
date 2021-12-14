@@ -49,35 +49,40 @@
     </header>
 
 
-    <div class="game-container">
-      <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" width=640 height=480></canvas>
-        <div id="unity-loading-bar">
-          <div id="unity-logo"></div>
-          <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
+    <div class="core-content">
+      <div class="game-container">
+        <div id="unity-container" class="unity-desktop">
+          <canvas id="unity-canvas" width=640 height=480></canvas>
+          <div id="mobile-warning" style="display: none;">
+            This game is not currently supported on mobile devices.
+          </div>
+          <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+              <div id="unity-progress-bar-full"></div>
+            </div>
+          </div>
+          <div id="unity-mobile-warning">
+            WebGL builds are not supported on mobile devices.
+          </div>
+          <div id="unity-footer">
+            <!--<div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">Escape Game - Bedroom</div>-->
+
           </div>
         </div>
-        <div id="unity-mobile-warning">
-          WebGL builds are not supported on mobile devices.
+
+        <div class="game-description">
+          <p class="game-name">
+            Escape Room - Bedroom
+          </p>
+          <p>
+            This game is inspired by popular escape games from creators such as MildEscape and neutralxe. It's not a big or complicated one, but I wanted to make a sort of love letter to the genre. I hope people can enjoy this game as much as I enjoy making it.
+          </p>
+
+          <button class="js__credits-display" onclick="displayCredits()">Full Credits</button>
         </div>
-        <div id="unity-footer">
-          <!--<div id="unity-webgl-logo"></div>
-          <div id="unity-fullscreen-button"></div>
-          <div id="unity-build-title">Escape Game - Bedroom</div>-->
-
-        </div>
-      </div>
-
-      <div class="game-description">
-        <p class="game-name">
-          Escape Room - Bedroom
-        </p>
-        <p>
-          This game is inspired by escape games from MildEscape and neutralxe, and is in a way my love letter to the genre. It's not a big one, nor is it a complicated one, but I wanted to make games, and after mostly learning Unity by myself, I have created one that I hope people can enjoy as much as I enjoy making it.
-        </p>
-
-        <button class="js__credits-display" onclick="displayCredits()">Credits</button>
       </div>
     </div>
 
@@ -173,7 +178,7 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var mobileWarning = document.querySelector("#unity-mobile-warning");
+      var mobileWarning = document.querySelector("#mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
@@ -182,19 +187,19 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-      // if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      //   container.className = "unity-mobile";
-      //   // Avoid draining fillrate performance on mobile devices,
-      //   // and default/override low DPI mode on mobile browsers.
-      //   config.devicePixelRatio = 1;
-      //   mobileWarning.style.display = "block";
-      //   setTimeout(() => {
-      //     mobileWarning.style.display = "none";
-      //   }, 5000);
-      // } else {
-      canvas.style.width = "640px";
-      canvas.style.height = "480px";
-      // }
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        mobileWarning.style.display = "block";
+        // setTimeout(() => {
+          // mobileWarning.style.display = "none";
+        // }, 5000);
+      } else {
+        canvas.style.width = "640px";
+        canvas.style.height = "480px";
+      }
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
