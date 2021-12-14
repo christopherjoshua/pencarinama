@@ -2,11 +2,16 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Pencarinama | Escape Game - Bedroom</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/bedroom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -45,15 +50,6 @@
 
 
     <div class="game-container">
-      <div class="game-description">
-        <p class="game-name">
-          Escape Room - Bedroom
-        </p>
-        <p>
-          This game is inspired by escape games from MildEscape and neutralxe, and is in a way my love letter to the genre. It's not a big one, nor is it a complicated one, but I wanted to make games, and after mostly learning Unity by myself, I have created one that I hope people can enjoy as much as I enjoy making it.
-        </p>
-      </div>
-
       <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" width=640 height=480></canvas>
         <div id="unity-loading-bar">
@@ -72,8 +68,86 @@
 
         </div>
       </div>
+
+      <div class="game-description">
+        <p class="game-name">
+          Escape Room - Bedroom
+        </p>
+        <p>
+          This game is inspired by escape games from MildEscape and neutralxe, and is in a way my love letter to the genre. It's not a big one, nor is it a complicated one, but I wanted to make games, and after mostly learning Unity by myself, I have created one that I hope people can enjoy as much as I enjoy making it.
+        </p>
+
+        <button class="js__credits-display" onclick="displayCredits()">Credits</button>
+      </div>
     </div>
 
+    <div class="credits-all">
+      <div class="popup-credits-all">
+        <button class="js__credits-all-close" onclick="displayCredits()"></button>
+
+
+        <p>Models:</p>
+
+        Bed collection, Kobra Game Studios - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/furniture/bed-collection-25256">https://assetstore.unity.com/packages/3d/props/furniture/bed-collection-25256</a><br>
+
+        TV / arm mount, Kobra Game Studios - <a target="_blank" href="https://assetstore.unity.com/packages/3d/tv-arm-mount-73139">https://assetstore.unity.com/packages/3d/tv-arm-mount-73139</a><br>
+
+        Key and Lock, CG Cell - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/furniture/key-and-lock-193317">https://assetstore.unity.com/packages/3d/props/furniture/key-and-lock-193317</a><br>
+
+        Table, MASH Virtual - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/furniture/table-162871">https://assetstore.unity.com/packages/3d/props/furniture/table-162871</a><br>
+
+        PBR Game-Ready Desks Pack, Drunken Lizard Games - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/furniture/pbr-game-ready-desks-pack-116137">https://assetstore.unity.com/packages/3d/props/furniture/pbr-game-ready-desks-pack-116137</a><br>
+
+        Door Free Pack Aferar, Andrey Ferar - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/interior/door-free-pack-aferar-148411">https://assetstore.unity.com/packages/3d/props/interior/door-free-pack-aferar-148411</a><br>
+
+        Free PBR Lamps, New Solution Studios - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/interior/free-pbr-lamps-70181">https://assetstore.unity.com/packages/3d/props/interior/free-pbr-lamps-70181</a><br>
+
+        QA Books, QAtmo - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/interior/qa-books-115415">https://assetstore.unity.com/packages/3d/props/interior/qa-books-115415</a><br>
+
+        Crowbar, RRFreelance / PiXelBurner - <a target="_blank" href="https://assetstore.unity.com/packages/3d/props/tools/crowbar-20500">https://assetstore.unity.com/packages/3d/props/tools/crowbar-20500</a><br>
+
+        Handheld Compass, TrentPierce - <a target="_blank" href="https://sketchfab.com/3d-models/handheld-compass-b384e34bead84192b101dc029a859000">https://sketchfab.com/3d-models/handheld-compass-b384e34bead84192b101dc029a859000</a><br>
+
+        Women Combat Boots, Batuhan13 - <a target="_blank" href="https://sketchfab.com/3d-models/women-combat-boots-f1e9d6761743404e936ecbecc75ca17c">https://sketchfab.com/3d-models/women-combat-boots-f1e9d6761743404e936ecbecc75ca17c</a><br>
+
+        Table Light, minitakesstudio - <a target="_blank" href="https://sketchfab.com/3d-models/table-light-026b51b78bde4a83bf0cee84d4dd985e">https://sketchfab.com/3d-models/table-light-026b51b78bde4a83bf0cee84d4dd985e</a><br>
+
+        Luggage, Niels Philipsen - <a target="_blank" href="https://sketchfab.com/3d-models/luggage-9b266e1dcb7f430597a8689e5602ad7e">https://sketchfab.com/3d-models/luggage-9b266e1dcb7f430597a8689e5602ad7e</a><br>
+
+        <p>Textures:</p>
+
+        Striped Wallpaper, Keegan Keene - <a target="_blank" href="https://gametextures.com/freebies/768173">https://gametextures.com/freebies/768173</a><br>
+
+        Writing On Paper - <a target="_blank" href="http://clipart-library.com/clipart/BcaE4zXc8.htm">http://clipart-library.com/clipart/BcaE4zXc8.htm</a><br>
+
+        Icons made by <a target="_blank" href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+
+        Icons made by <a target="_blank" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br>
+
+        <p>Typeface:</p>
+        DSEG, keshikan - <a target="_blank" href="https://www.keshikan.net/fonts-e.html">https://www.keshikan.net/fonts-e.html</a><br>
+        Varela Round, Joe Prince - <a target="_blank" href="https://fonts.google.com/specimen/Varela+Round">https://fonts.google.com/specimen/Varela+Round</a><br>
+
+        <p>Sounds:</p>
+        Wood Floor Creak, sthran - <a target="_blank" href="https://freesound.org/people/sthran/sounds/572645/">https://freesound.org/people/sthran/sounds/572645/</a><br>
+        drawer. open, - mitchanary - <a target="_blank" href="https://freesound.org/people/mitchanary/sounds/506147/">https://freesound.org/people/mitchanary/sounds/506147/</a><br>
+        Drawer_open.wav, MaxDemianAGL - <a target="_blank" href="https://freesound.org/people/MaxDemianAGL/sounds/183614/">https://freesound.org/people/MaxDemianAGL/sounds/183614/</a><br>
+        13-WoodDoorOpening.wav, cazadordoblekatana - <a target="_blank" href="https://freesound.org/people/cazadordoblekatana/sounds/429146/">https://freesound.org/people/cazadordoblekatana/sounds/429146/</a><br>
+        Snow Step 1.wav, morganpurkis - <a target="_blank" href="https://freesound.org/people/morganpurkis/sounds/369777/">https://freesound.org/people/morganpurkis/sounds/369777/</a><br>
+        Success Jingle, JustInvoke - <a target="_blank" href="https://freesound.org/people/JustInvoke/sounds/446111/">https://freesound.org/people/JustInvoke/sounds/446111/</a><br>
+        Wood on Wood.mp3, OTBTechno - <a target="_blank" href="https://freesound.org/people/OTBTechno/sounds/136771/">https://freesound.org/people/OTBTechno/sounds/136771/</a><br>
+        BottlecapBag 028.wav, Department64 - <a target="_blank" href="https://freesound.org/people/Department64/sounds/550196/">https://freesound.org/people/Department64/sounds/550196/</a><br>
+        UI Click, EminYILDIRIM - <a target="_blank" href="https://freesound.org/people/EminYILDIRIM/sounds/536108/">https://freesound.org/people/EminYILDIRIM/sounds/536108/</a><br>
+        <br>
+        Lobby Time by Kevin MacLeod<br>
+        Link: <a target="_blank" href="https://incompetech.filmmusic.io/song/3986-lobby-time">https://incompetech.filmmusic.io/song/3986-lobby-time</a><br>
+        License: https://filmmusic.io/standard-license<br>
+        <br>
+        Glitter Blast by Kevin MacLeod<br>
+        Link: <a target="_blank" href="https://incompetech.filmmusic.io/song/4707-glitter-blast">https://incompetech.filmmusic.io/song/4707-glitter-blast</a><br>
+        License: https://filmmusic.io/standard-license<br>
+      </div>
+    </div>
 
     <footer>
       <div class="copyright">
@@ -108,19 +182,19 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
-      } else {
-        canvas.style.width = "640px";
-        canvas.style.height = "480px";
-      }
+      // if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      //   container.className = "unity-mobile";
+      //   // Avoid draining fillrate performance on mobile devices,
+      //   // and default/override low DPI mode on mobile browsers.
+      //   config.devicePixelRatio = 1;
+      //   mobileWarning.style.display = "block";
+      //   setTimeout(() => {
+      //     mobileWarning.style.display = "none";
+      //   }, 5000);
+      // } else {
+      canvas.style.width = "640px";
+      canvas.style.height = "480px";
+      // }
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -138,6 +212,10 @@
         });
       };
       document.body.appendChild(script);
+
+      displayCredits = () => {
+        document.querySelector(".credits-all").classList.toggle("show");
+      }
     </script>
   </body>
 </html>

@@ -9,9 +9,10 @@ body
 .game-container {
 	position: relative;
 	display: flex;
-	max-width: 1200px;
+	max-width: 1000px;
 	min-height: 600px;
-	margin: 5.5rem auto 6rem;
+	margin: 12rem auto 6rem;
+	padding: 1.2rem;
 }
 #unity-container
 {
@@ -32,8 +33,93 @@ body
 	line-height: 1.25rem;
 }
 
-.game-name{
+.game-description .game-name{
 	font-size: 2.2rem;
 	margin-top: 0;
 	line-height: 1;
+}
+
+.credits-all
+{
+    position: fixed;
+    z-index: 99;
+    background: #00000045;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 8rem;
+    box-sizing: border-box;
+}
+.credits-all.show
+{
+	display: block;
+}
+.popup-credits-all
+{
+	position: relative;
+	padding: .5rem 1.5rem 1rem;
+	background: #ffffff;
+	border-radius: .15rem;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
+	word-break: break-word;
+}
+
+.popup-credits-all p {
+	margin-top: 2rem;
+	margin-bottom: .8rem;
+	font-size: 1.8rem;
+}
+.popup-credits-all p:nth-child(1)
+{
+	margin-top: 0;
+}
+
+.js__credits-all-close{
+	position: absolute;
+	top: .8rem;
+	right: .8rem;
+	width: 2rem;
+	height: 2rem;
+}
+.js__credits-all-close:before, .js__credits-all-close:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: .25s;
+    content: '';
+    height: 0.2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    background-color: #000000;
+    pointer-events: initial;
+}
+.js__credits-all-close:before {
+    transform: translate(-50%, -50%) rotate(
+45deg);
+}
+.js__credits-display{
+	font-size: 1rem;
+}
+
+
+@media(max-width: 840px) {
+	.game-container, .game-description{
+		display: block;
+	}
+	.game-container{
+		margin-top: 6rem;
+	}
+	.game-description{
+		margin-top: .8rem;
+	}
+
+	.credits-all{
+		height: 100%;
+		width: 100%;
+		padding: 2rem;
+	}
 }
