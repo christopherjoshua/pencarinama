@@ -1,0 +1,14 @@
+body
+{
+	background: #00126133;
+}
+.game-container {
+	position: relative;
+	max-width: 1200px;
+	min-height: 600px;
+}
+#unity-container
+{
+	width: 80%;
+	max-width: 720px;
+}

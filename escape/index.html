@@ -6,8 +6,19 @@
     <title>Pencarinama | Escape Game - Bedroom</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="../assets/css/bedroom.css">
   </head>
   <body>
+    <div class="game-container">
+      <div id="game-description">
+        <p class="game-name">
+          Escape Room - Bedroom
+        </p>
+        <p>
+          This game is inspired by escape games from MildEscape and neutralxe, and is in a way my love letter to the genre. It's not a big one, nor is it a complicated one, but I wanted to make games, and after mostly learning Unity by myself, I have created one that I hope people can enjoy as much as I enjoy making it.
+        </p>
+      </div>
+    </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=640 height=480></canvas>
       <div id="unity-loading-bar">
@@ -20,9 +31,10 @@
         WebGL builds are not supported on mobile devices.
       </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <!--<div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Escape Game - Bedroom</div>
+        <div id="unity-build-title">Escape Game - Bedroom</div>-->
+
       </div>
     </div>
     <script>
@@ -42,7 +54,7 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
