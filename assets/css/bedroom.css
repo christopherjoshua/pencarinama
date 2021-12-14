@@ -4,11 +4,32 @@ body
 }
 .game-container {
 	position: relative;
+	display: flex;
 	max-width: 1200px;
 	min-height: 600px;
+	margin: 5.5rem auto 6rem;
 }
 #unity-container
 {
-	width: 80%;
+	display: inline-block;
+	position: relative;
+	width: 70%;
 	max-width: 720px;
+}
+
+.game-description
+{
+	display: inline-block;
+	padding: 0 2rem 2rem;
+	font-family: "Poppins", Arial, Calibri;
+}
+
+.game-description p {
+	line-height: 1.25rem;
+}
+
+.game-name{
+	font-size: 2.2rem;
+	margin-top: 0;
+	line-height: 1;
 }

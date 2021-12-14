@@ -9,8 +9,43 @@
     <link rel="stylesheet" href="../assets/css/bedroom.css">
   </head>
   <body>
+
+    <header class="header-content scrolled">
+      <div class="header-title">
+        Pencarinama
+      </div>
+      <!--<nav class="header-tab">
+        <a href="#top" class="js__tab-item tab-item" attr-anchor-name='top'>
+          About Me
+        </a>
+        <a href="#works" class='js__tab-item tab-item' attr-anchor-name='works'>
+          Portfolio
+        </a>
+        <a href="#contact" class='js__tab-item tab-item' attr-anchor-name='contact'>
+          Contact Me
+        </a>
+      </nav>
+      <nav class="header-sidebar">
+        <button class="js__header-button header-sidebar-button" label='Show navigation'></button>
+        <div class="header-sidebar-content" tabindex="-1">
+          <div class="header-sidebar-overlay">
+            <a href="#top" tabindex="-1" class="js__sidebar-item sidebar-item">
+              About Me
+            </a>
+            <a href="#works" tabindex='-1' class='js__sidebar-item sidebar-item'>
+              Portfolio
+            </a>
+            <a href="#contact" tabindex="-1" class='js__sidebar-item sidebar-item'>
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </nav>-->
+    </header>
+
+
     <div class="game-container">
-      <div id="game-description">
+      <div class="game-description">
         <p class="game-name">
           Escape Room - Bedroom
         </p>
@@ -18,25 +53,34 @@
           This game is inspired by escape games from MildEscape and neutralxe, and is in a way my love letter to the genre. It's not a big one, nor is it a complicated one, but I wanted to make games, and after mostly learning Unity by myself, I have created one that I hope people can enjoy as much as I enjoy making it.
         </p>
       </div>
-    </div>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=640 height=480></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+
+      <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width=640 height=480></canvas>
+        <div id="unity-loading-bar">
+          <div id="unity-logo"></div>
+          <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+          </div>
+        </div>
+        <div id="unity-mobile-warning">
+          WebGL builds are not supported on mobile devices.
+        </div>
+        <div id="unity-footer">
+          <!--<div id="unity-webgl-logo"></div>
+          <div id="unity-fullscreen-button"></div>
+          <div id="unity-build-title">Escape Game - Bedroom</div>-->
+
         </div>
       </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
-      </div>
-      <div id="unity-footer">
-        <!--<div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Escape Game - Bedroom</div>-->
-
-      </div>
     </div>
+
+
+    <footer>
+      <div class="copyright">
+        Christopher Joshua - 2021
+      </div>
+    </footer>
+    
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/build.loader.js";
@@ -86,9 +130,9 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
+          /*fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-          };
+          };*/
         }).catch((message) => {
           alert(message);
         });
