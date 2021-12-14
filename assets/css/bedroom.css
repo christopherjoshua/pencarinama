@@ -1,6 +1,10 @@
 body
 {
 	background: #00126133;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .game-container {
 	position: relative;
