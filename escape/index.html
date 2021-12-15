@@ -234,7 +234,7 @@
         document.querySelector(".credits-all").classList.toggle("show");
       }
 
-      document.onload = () => {
+      window.onload = () => {
         if(window.location.hash.trim() == "#credits")
         {
           displayCredits();
