@@ -233,6 +233,13 @@
       displayCredits = () => {
         document.querySelector(".credits-all").classList.toggle("show");
       }
+
+      document.onload = () => {
+        if(window.location.hash.trim() == "#credits")
+        {
+          displayCredits();
+        }
+      }
     </script>
   </body>
 </html>
