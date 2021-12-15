@@ -120,7 +120,15 @@ body
 	text-align: center;
 	padding: 2rem;
 }
-
+#unity-start-onclick{
+	width: 100%;
+	display: block;
+	position: relative;
+	margin-top: .5rem;
+	font-size: 1.2rem;
+	background: #ffffff;
+	border: 0px solid #00000000;
+}
 .core-content
 {
 	flex-basis: auto;
