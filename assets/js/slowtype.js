@@ -3,7 +3,7 @@ let c__slowtype = document.querySelector('.js__slowtype');
 let c__sidekick = document.querySelector('.js__sidekick');
 //set minimum time to start typing
 let delay = 2000;
-let content_type = 'Frontend Web Developer'
+let content_type = 'Programmer'
 let index = 0;
 
 let slowType = () => {
