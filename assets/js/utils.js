@@ -6,6 +6,7 @@ let c__sidecontent = document.querySelector('.header-sidebar-content');
 let c__sideitem = document.querySelectorAll('.js__sidebar-item');
 let c__tabitem = document.querySelectorAll('.js__tab-item');
 let c__year = document.querySelector('.js__automate-year');
+let c__copy = document.querySelector('.js__automate-copy');
 let c__prevbutton = document.querySelector('.js__slider-prev');
 let c__nextbutton = document.querySelector('.js__slider-next');
 let c__slidercontainer = document.querySelector('.js__slider-container');
@@ -68,6 +69,10 @@ updateSliderItem = (dir) => {
 }
 
 triggerZoom = (item) => {
+	if(item.getAttribute("attr-slider-ignore") != "")
+	{
+		return;
+	}
 	let overlay = document.querySelector('.slider-image-overlay');
 	if(!item)
 	{
@@ -99,6 +104,7 @@ c__tabitem.forEach( i => {
 c__herobutton.addEventListener('click', () => {updateFocus('works')}, false)	
 
 c__year.innerHTML = (new Date()).getFullYear() - 2015;
+c__copy.innerHTML = "2021-" + (new Date()).getFullYear();
 
 c__prevbutton.addEventListener('click', () => {updateSliderItem(-1)}, false)
 c__nextbutton.addEventListener('click', () => {updateSliderItem(1)}, false)
