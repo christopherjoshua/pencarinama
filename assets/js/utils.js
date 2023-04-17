@@ -11,6 +11,9 @@ let c__prevbutton = document.querySelector('.js__slider-prev');
 let c__nextbutton = document.querySelector('.js__slider-next');
 let c__slidercontainer = document.querySelector('.js__slider-container');
 let c__sliderzoom = document.querySelectorAll('.js__slider-item');
+
+let c__overlay = document.querySelector('.slider-image-overlay');
+
 let c__sliderindex = 0;
 
 let c__resetfocus = null;
@@ -56,12 +59,23 @@ updateSliderItem = (dir) => {
 	current_obj.classList.remove('js__active');
 	current_obj.querySelector('img').setAttribute('tabindex', -1);
 	current_obj.querySelector('p').setAttribute('tabindex', -1);
+	if(current_obj.getAttribute("attr-slider-has-redirect") != "")
+	{
+		current_obj.querySelector('a').setAttribute('tabindex', -1);
+	}
 	current_obj.setAttribute('tabindex', -1);
 
 	next_obj.classList.add('js__active');
 	next_obj.querySelector('img').setAttribute('tabindex', 0);
 	next_obj.querySelector('p').setAttribute('tabindex', 0);
-	next_obj.setAttribute('tabindex', 0);
+	if(next_obj.getAttribute("attr-slider-has-redirect") != "")
+	{
+		next_obj.querySelector('a').setAttribute('tabindex', 0);
+	}
+	if(next_obj.getAttribute("attr-slider-ignore") == "")
+	{
+		next_obj.setAttribute('tabindex', 0);
+	}
 
 	c__sliderindex = next_index;
 
@@ -69,14 +83,9 @@ updateSliderItem = (dir) => {
 }
 
 triggerZoom = (item) => {
-	if(item.getAttribute("attr-slider-ignore") != "")
-	{
-		return;
-	}
-	let overlay = document.querySelector('.slider-image-overlay');
 	if(!item)
 	{
-		overlay.classList.remove('js__active');
+		c__overlay.classList.remove('js__active');
 		c__closezoombutton.setAttribute('tabindex', -1);
 		if(c__resetfocus)
 		{
@@ -84,13 +93,27 @@ triggerZoom = (item) => {
 		}
 		return;
 	}
+
+	if(item.getAttribute("attr-slider-ignore") != "")
+	{
+		return;
+	}
+
 	c__resetfocus = item;
-	overlay.classList.add('js__active');	
+	c__overlay.classList.add('js__active');	
+	
 	let zoomObj = document.querySelector('.slider-image-zoom');
 	zoomObj.setAttribute('src', item.getAttribute('attr-slider-src'))
 	zoomObj.setAttribute('alt', item.getAttribute('attr-slider-alt'))
+
 	c__closezoombutton.setAttribute('tabindex', 0);
 	c__closezoombutton.focus();
+}
+
+checkImageZoomed = () => {
+	if(c__overlay.classList.contains("js__active")){
+		c__closezoombutton.focus();
+	}
 }
 
 c__button.addEventListener('click', triggerModal, false );
@@ -121,3 +144,4 @@ c__sliderzoom.forEach( (i) => {
 })
 
 c__closezoombutton.addEventListener('click', () => {triggerZoom(false)}, false)
+c__closezoombutton.addEventListener('blur', () => {checkImageZoomed()}, false);
